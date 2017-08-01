@@ -4,8 +4,30 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="742a08f04fa24a75b468194586822773" Name="Diagram1">
-        <EntityTypeShape EntityType="LearningPlannerModel.Material" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="ca701299c9654231969b4a23c633eabb" Name="Diagram1">
+        <EntityTypeShape EntityType="DbModel.Chains" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Materials" Width="1.5" PointX="8.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.MaterialsChains" Width="1.5" PointX="10.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Priority" Width="1.5" PointX="6" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Ratings" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Status" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Tags" Width="1.5" PointX="13.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.TimeZones" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Types" Width="1.5" PointX="6" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.Users" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbModel.database_firewall_rules" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="DbModel.FK_Chains_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Chains_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_MaterialsChains_Chains" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Materials_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Materials_Ratings" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Materials_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Materials_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_MaterialsChains_Materials" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Tags_Tags" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Tags_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.FK_Users_TimeZones" ManuallyRouted="false" />
+        <AssociationConnector Association="DbModel.MaterialsTags" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

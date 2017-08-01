@@ -12,9 +12,18 @@ namespace LearningPlanner.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Material
+    public partial class Priority
     {
-        public int ID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Priority()
+        {
+            this.Materials = new HashSet<Materials>();
+        }
+    
+        public byte ID { get; set; }
         public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Materials> Materials { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using LearningPlanner.Database;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,17 +11,17 @@ namespace LearningPlanner.Controllers
 {
     public class HomeController : ApiController
     {
-        private DbModel _dbModel;
+        private WoodenHuskyJazzEntities _dbModel;
 
         public HomeController()
         {
-            _dbModel = new DbModel();
+            _dbModel = DbModelCreator.Create();
         }
 
         public IHttpActionResult Get()
         {
-            var resultDb = _dbModel.Material.Find(1);
-            return Ok(resultDb);
+            var resultDb = _dbModel.Status.Find(1);
+            return Ok(resultDb.Description);
         }
     }
 }

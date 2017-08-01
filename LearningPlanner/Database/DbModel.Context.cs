@@ -13,10 +13,15 @@ namespace LearningPlanner.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbModel : DbContext
+    public partial class WoodenHuskyJazzEntities : DbContext
     {
-        public DbModel()
-            : base("name=DbModel")
+        public WoodenHuskyJazzEntities()
+            : base("name=WoodenHuskyJazzEntities")
+        {
+        }
+
+        public WoodenHuskyJazzEntities(string connectionString)
+            : base(connectionString)
         {
         }
     
@@ -25,6 +30,16 @@ namespace LearningPlanner.Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Material> Material { get; set; }
+        public virtual DbSet<Chains> Chains { get; set; }
+        public virtual DbSet<Materials> Materials { get; set; }
+        public virtual DbSet<MaterialsChains> MaterialsChains { get; set; }
+        public virtual DbSet<Priority> Priority { get; set; }
+        public virtual DbSet<Ratings> Ratings { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
+        public virtual DbSet<Tags> Tags { get; set; }
+        public virtual DbSet<TimeZones> TimeZones { get; set; }
+        public virtual DbSet<Types> Types { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }
