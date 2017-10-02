@@ -15,13 +15,14 @@ namespace LearningPlanner.Controllers
 
         public HomeController()
         {
-            _dbModel = DbModelCreator.Create();
+            _dbModel = new WoodenHuskyJazzEntities();
         }
 
         public IHttpActionResult Get()
         {
             var resultDb = _dbModel.Status.Find(1);
-            return Ok(resultDb.Description);
+            var blje = _dbModel.Users.Select(u => new { u.Username, u.Surname, u.Name }).FirstOrDefault(); ;
+            return Ok(blje);
         }
     }
 }
