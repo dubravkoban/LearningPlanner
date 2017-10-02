@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Types] (
+    [ID]   TINYINT       IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Types] PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [UC_Types_Name] UNIQUE NONCLUSTERED ([Name] ASC)
+);
+

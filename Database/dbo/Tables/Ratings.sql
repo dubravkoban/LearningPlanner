@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Ratings] (
+    [ID]   TINYINT       IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Ratings] PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [UC_Ratings_Name] UNIQUE NONCLUSTERED ([Name] ASC)
+);
+
